@@ -21,6 +21,11 @@ const projectSchema=new mongoose.Schema({
     type:Number,
     required:[true,'precio obligatorio']
     },
+    estado:{
+    type:String,
+    enum:['cotizacion','diseño','fabricacion','proximaInstalar','instalando','finalizado'],
+    default:'cotizacion'
+   },
 
 },{timestamps:true});
 module.exports=mongoose.model('project',projectSchema);
